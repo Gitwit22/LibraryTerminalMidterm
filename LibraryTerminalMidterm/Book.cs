@@ -17,7 +17,20 @@ namespace LibraryTerminalMidterm
         public static List<Book> BookList { get; set; } = new List<Book>()
 
         {
-            new Book("Gina", "Captain",)
+            new Book("The Matrix", "John Doe"),
+            new Book("The Bible", "Jesus Christ"),
+            new Book("Jumanji", "Robin Williams"),
+            new Book("Green Eggs and Ham", "Dr. Seuss"),
+            new Book("The Great Gatsby", "F. Scott Fitzgerald"),
+            new Book("Wrestling with Acting", "The Rock"),
+            new Book("Fool Me Once", "George Bush"),
+            new Book("If i Did it and Why", "O.J. Simpson"),
+            new Book("Lord Of The Rings", "J.R. Tolkien"),
+            new Book("Harry Potter", "J.K. Rowling"),
+            new Book("How To Rap", "John Blaze"),
+            new Book("Teacher Who Barge In And Save Us From Mistakes", "Cassly Tremaine")
+
+
 
 
         };
