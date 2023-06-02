@@ -37,7 +37,7 @@ namespace LibraryTerminalMidterm
 
         }
 
-        public string DisplayBooks()
+        public void DisplayBooks()
         {
             int counter = 1;
 
@@ -48,9 +48,11 @@ namespace LibraryTerminalMidterm
                 counter++;
 
             }
+            Console.WriteLine("Enter the number of the book you want to checkout.");
 
+            int input = Int32.Parse( Console.ReadLine() );
 
-
+            BookList[input - 1].IsCheckedOut = true;
 
 
 
