@@ -84,12 +84,13 @@ namespace LibraryTerminalMidterm
                 if (book.Title == input.ToLower())
                 {
                     book.IsCheckedOut = false;
+                    Console.WriteLine("Thank you for returning the book.");
                     
                 }
             }
         }
 
-        public static void Checkout(List<Book> book, DateTime date)
+        public static void Checkout(DateTime date)
         {
             Console.WriteLine("Enter the number of the book you want to checkout.");
 

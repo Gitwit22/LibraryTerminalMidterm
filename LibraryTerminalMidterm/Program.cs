@@ -5,7 +5,7 @@ Library.BookList.Add(new Book("elf", "family"));
 Library.BookList.Add(new Book("the matrix", "john doe", true));
 Library.BookList.Add(new Book("the bible", "jesus christ"));
 Library.BookList.Add(new Book("jumanji", "robin williams", true));
-Library.BookList.Add(new Book("green eggs and ham", "dr. seuss"));
+Library.BookList.Add(new Book("green eggs and ham", "dr. sthe matrix"));
 Library.BookList.Add(new Book("the great gatsby", "f. scott fitzgerald"));
 Library.BookList.Add(new Book("wrestling with acting", "the rock"));
 Library.BookList.Add(new Book("fool me once", "george bush", true));
@@ -43,7 +43,7 @@ switch (input)
     case 1:
         Library.DisplayBooks();
         //added checkout to the display case
-        //Library.Checkout();
+        Library.Checkout(DateTime.Now);
         break;
     case 2:
         Library.SearchByAuthor(); 
