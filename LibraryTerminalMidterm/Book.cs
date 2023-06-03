@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.ConstrainedExecution;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,8 +14,9 @@ namespace LibraryTerminalMidterm
         public string Author { get; set; }
         public bool IsCheckedOut { get; set; } = false;
         //write method for due date if checked out 
+        public DateTime Date { get; } = DateTime.Now;
 
-        public static List<Book> BookList { get; set; } = new List<Book>();
+
 
 
 
@@ -30,32 +32,15 @@ namespace LibraryTerminalMidterm
             Title = title;
             Author = author;
             IsCheckedOut = isCheckedOut;
+
         }
 
-        public Book()
+        public Book(DateTime date) 
         {
+            Date = date;
 
         }
 
-        public void DisplayBooks()
-        {
-            int counter = 1;
-
-            foreach (var book in BookList)
-            {
-
-                Console.WriteLine($"{counter}. {book.Title} by {book.Author}");
-                counter++;
-
-            }
-            Console.WriteLine("Enter the number of the book you want to checkout.");
-
-            int input = Int32.Parse( Console.ReadLine() );
-
-            BookList[input - 1].IsCheckedOut = true;
-
-
-
-        }
     }
 }
+

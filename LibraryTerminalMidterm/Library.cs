@@ -16,7 +16,6 @@ namespace LibraryTerminalMidterm
 
             foreach (var book in BookList)
             {
-
                 Console.WriteLine($"{counter}. {book.Title} by {book.Author}");
                 counter++;
 
@@ -90,7 +89,7 @@ namespace LibraryTerminalMidterm
             }
         }
 
-        public static void Checkout(List<Book> book)
+        public static void Checkout(List<Book> book, DateTime date)
         {
             Console.WriteLine("Enter the number of the book you want to checkout.");
 
@@ -99,6 +98,8 @@ namespace LibraryTerminalMidterm
             BookList[input - 1].IsCheckedOut = true;
             DateTime dueDate = date.AddDays(14);
 
+            Console.WriteLine($"Thank you. The book is now checked out and it is to be returned to the library by {dueDate}");
+            
             //DateTime dueDate = Date.AddDays
             //BookList[input - 1].Date = ;
 
