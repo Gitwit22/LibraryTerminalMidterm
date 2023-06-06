@@ -15,12 +15,14 @@ Library.BookList.Add(new Book("harry potter", "j.k. rowling", true));
 Library.BookList.Add(new Book("how to rap", "john blaze"));
 Library.BookList.Add(new Book("teacher who barge in and save us from mistakes", "cassly tremaine"));
 
+//how is this capitalization handled in the real world on both sides (user input and dev data)
+
 //Start Program
 
 Console.WriteLine("Hello. Welcome To The Online Library Rental System");
 
 
-Console.WriteLine("What would you like to do? (Choose 1-5");
+Console.WriteLine("What would you like to do? (Choose 1-5)");
 
 Console.WriteLine("1. Display All Books");
 Console.WriteLine("2. Search By Author");
@@ -43,7 +45,7 @@ switch (input)
     case 1:
         Library.DisplayBooks();
         //added checkout to the display case
-        Library.Checkout(DateTime.Now);
+        
         break;
     case 2:
         Library.SearchByAuthor(); 

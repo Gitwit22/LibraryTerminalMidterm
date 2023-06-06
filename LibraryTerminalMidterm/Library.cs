@@ -12,6 +12,7 @@ namespace LibraryTerminalMidterm
 
         public static void DisplayBooks()
         {
+            DateTime today = DateTime.Now;
             int counter = 1;
 
             foreach (var book in BookList)
@@ -20,31 +21,81 @@ namespace LibraryTerminalMidterm
                 counter++;
 
             }
+
+            Console.WriteLine("Enter the number of the book you want to checkout.");
+            int input = Int32.Parse(Console.ReadLine());
+
+            if (BookList[input - 1].IsCheckedOut == false)
+            {
+                BookList[input - 1].IsCheckedOut = true;
+                DateTime dueDate = today.AddDays(14);
+                Console.WriteLine($"Thank you. The book {BookList[input - 1].Title} is now checked out and it is to be returned to the library by {dueDate}");
+            }
+            else
+            {
+                Console.WriteLine("This book is not available, now you gotta do it all over again!");
+            }
+           
+
+
+
+            // Linq
+
+
         }
         public static void SearchByAuthor()
         {
+            DateTime today = DateTime.Now;
             Console.WriteLine("Enter authors name.");
             string input = Console.ReadLine();
-
+            
 
             foreach (Book book in BookList)
             {
 
                 if (book.Author == input.ToLower() && book.IsCheckedOut == false)
                 {
-                    Console.WriteLine(book); //call checkout method
+                    
+                    book.IsCheckedOut = true;
+                    DateTime dueDate = today.AddDays(14);
+                    Console.WriteLine($"Thank you. The book {book.Title} is now checked out and it is to be returned to the library by {dueDate}");
+                    break;
+                    
                 }
                 else if (book.Author == input.ToLower() && book.IsCheckedOut == true)
                 {
-                    Console.WriteLine("This book is checked out.");
+                    
+                    Console.WriteLine("This book is checked out");
+                    break;
                 }
                 else
                 {
-                    Console.WriteLine("This book is not in library");
+
+                    Console.WriteLine("Now you know good and well that author aint on the list, now you gotta start all over again!");
+                    break;
                 }
 
             }
 
+            //if (isNotInCatalog = true)
+            //{
+
+            //    Console.WriteLine("Now you know good and well that author aint on the list, now you gotta start all over again!");
+
+            //}
+
+           
+
+            //using linq
+
+            //List<Book> bookQuery = from book in BookList
+            //                 where BookList.Contains()
+            //                 select book;
+
+            //foreach (Book book in bookQuery)
+            //{
+            //    Console.WriteLine(book);
+            //}
         }
 
         public static void SearchByTitle()
@@ -90,19 +141,19 @@ namespace LibraryTerminalMidterm
             }
         }
 
-        public static void Checkout(DateTime date)
+        public static void Checkout()
         {
+            DateTime today = DateTime.Now;
             Console.WriteLine("Enter the number of the book you want to checkout.");
 
             int input = Int32.Parse(Console.ReadLine());
 
             BookList[input - 1].IsCheckedOut = true;
-            DateTime dueDate = date.AddDays(14);
+            DateTime dueDate = today.AddDays(14);
 
             Console.WriteLine($"Thank you. The book is now checked out and it is to be returned to the library by {dueDate}");
             
-            //DateTime dueDate = Date.AddDays
-            //BookList[input - 1].Date = ;
+           
 
         }
 

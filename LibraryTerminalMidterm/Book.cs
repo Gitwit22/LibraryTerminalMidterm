@@ -13,12 +13,7 @@ namespace LibraryTerminalMidterm
         public string Title { get; set; }
         public string Author { get; set; }
         public bool IsCheckedOut { get; set; } = false;
-        //write method for due date if checked out 
-        public DateTime Date { get; } = DateTime.Now;
-
-
-
-
+        
 
         public Book(string title, string author)
         {
@@ -32,12 +27,6 @@ namespace LibraryTerminalMidterm
             Title = title;
             Author = author;
             IsCheckedOut = isCheckedOut;
-
-        }
-
-        public Book(DateTime date) 
-        {
-            Date = date;
 
         }
 
