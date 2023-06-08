@@ -48,84 +48,98 @@ namespace LibraryTerminalMidterm
             DateTime today = DateTime.Now;
             Console.WriteLine("Enter authors name.");
             string input = Console.ReadLine();
-            
-
+            bool isNotInCatalog = false;
+        
             foreach (Book book in BookList)
             {
-
                 if (book.Author == input.ToLower() && book.IsCheckedOut == false)
                 {
-                    
+                    isNotInCatalog = true;
                     book.IsCheckedOut = true;
                     DateTime dueDate = today.AddDays(14);
                     Console.WriteLine($"Thank you. The book {book.Title} is now checked out and it is to be returned to the library by {dueDate}");
                     break;
-                    
+
                 }
                 else if (book.Author == input.ToLower() && book.IsCheckedOut == true)
                 {
-                    
+                    isNotInCatalog = true;
                     Console.WriteLine("This book is checked out");
                     break;
                 }
-                else
-                {
-
-                    Console.WriteLine("Now you know good and well that author aint on the list, now you gotta start all over again!");
-                    break;
-                }
-
             }
 
-            //if (isNotInCatalog = true)
-            //{
-
-            //    Console.WriteLine("Now you know good and well that author aint on the list, now you gotta start all over again!");
-
-            //}
-
-           
-
-            //using linq
-
-            //List<Book> bookQuery = from book in BookList
-            //                 where BookList.Contains()
-            //                 select book;
-
-            //foreach (Book book in bookQuery)
-            //{
-            //    Console.WriteLine(book);
-            //}
+            if (isNotInCatalog == false)
+            {
+               Console.WriteLine("Now you know good and well that author aint on the list, now you gotta start all over again!");
+            }         
         }
 
         public static void SearchByTitle()
         {
             Console.WriteLine("Enter title.");
             string input = Console.ReadLine();
-
+            bool isNotInCatalog = false;
+            DateTime today = DateTime.Now;
 
             foreach (Book book in BookList)
             {
 
+
+
+
+
                 if (book.Title == input.ToLower() && book.IsCheckedOut == false)
                 {
-                    Console.WriteLine(book); //call checkout method
+                    isNotInCatalog = true;
+                    book.IsCheckedOut = true;
+                    DateTime dueDate = today.AddDays(14);
+                    Console.WriteLine($"Thank you. The book {book.Title} is now checked out and it is to be returned to the library by {dueDate}");
+                    break;
+
                 }
                 else if (book.Title == input.ToLower() && book.IsCheckedOut == true)
                 {
-                    Console.WriteLine("This book is checked out.");
+                    isNotInCatalog = true;
+                    Console.WriteLine("This book is checked out");
+                    break;
                 }
-                else
-                {
-                    Console.WriteLine("This book is not in library");
-                }
+
+
             }
-              //should we make our methods in a class by itself or within the class it corresponds with?
+
+            if (isNotInCatalog == false)
+            {
+
+                Console.WriteLine("Now you know good and well that author aint on the list, now you gotta start all over again!");
+
+            }
         }
 
 
 
-        public static void ReturnBook()
+            ////    foreach (Book book in BookList)
+            ////    {
+
+            ////        if (book.Title == input.ToLower() && book.IsCheckedOut == false)
+            ////        {
+            ////            Console.WriteLine(book); //call checkout method
+            ////        }
+            ////        else if (book.Title == input.ToLower() && book.IsCheckedOut == true)
+            ////        {
+            ////            Console.WriteLine("This book is checked out.");
+            ////        }
+            ////        //else
+            ////        //{
+            ////        //    Console.WriteLine("This book is not in library");
+            ////        //}
+            ////    }
+            ////      //should we make our methods in a class by itself or within the class it corresponds with?
+            ////}
+
+
+
+            public static void ReturnBook()
         {
             Console.WriteLine("Type the ttile of the book");
             string input = Console.ReadLine();
