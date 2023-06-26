@@ -76,4 +76,14 @@ while (startOver == true)
         Console.WriteLine("You did not enter a correct response. Try again.");
         Console.WriteLine();
     }
+    catch (ArgumentOutOfRangeException)
+    {
+        Console.WriteLine("You did not enter a correct response. Try again.");
+        Console.WriteLine();
+    }
+    catch (OverflowException)
+    {
+        Console.WriteLine("You did not enter a correct response. Try again.");
+        Console.WriteLine();
+    }
 }
