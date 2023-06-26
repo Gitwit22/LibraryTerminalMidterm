@@ -50,7 +50,7 @@ namespace LibraryTerminalMidterm
                 Console.WriteLine("You did not enter a correct response. Try again.");
                 Console.WriteLine();
             }
-            catch(ArgumentOutOfRangeException)
+            catch (ArgumentOutOfRangeException)
             {
                 Console.WriteLine("You did not enter a correct response. Try again.");
                 Console.WriteLine();
@@ -115,21 +115,21 @@ namespace LibraryTerminalMidterm
                     Console.WriteLine();
                 }
             }
-            catch (FormatException)
-            {
-                Console.WriteLine("You did not enter a correct response. Try again.");
-                Console.WriteLine();
-            }
+                catch (FormatException)
+                {
+                    Console.WriteLine("You did not enter a correct response. Try again.");
+                    Console.WriteLine();
+                }
                 catch (ArgumentOutOfRangeException)
-            {
-                Console.WriteLine("You did not enter a correct response. Try again.");
-                Console.WriteLine();
-            }
-            catch (OverflowException)
-            {
-                Console.WriteLine("You did not enter a correct response. Try again.");
-                Console.WriteLine();
-            }
+                {
+                    Console.WriteLine("You did not enter a correct response. Try again.");
+                    Console.WriteLine();
+                }
+                catch (OverflowException)
+                {
+                    Console.WriteLine("You did not enter a correct response. Try again.");
+                    Console.WriteLine();
+                }
             }     
         }
 
